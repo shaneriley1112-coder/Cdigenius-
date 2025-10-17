@@ -4,4 +4,4 @@ cd /d %~dp0
 npm install
 eas login
 eas build -p android --profile preview --type apk
-run
+pause
