@@ -1,4 +1,25 @@
-@echo off
+# =====================================
+# CDI Genius Real Version Launcher
+# =====================================
+
+# Set working directory to this script folder
+Set-Location -Path $PSScriptRoot
+
+# Check if Node.js is installed
+if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
+    Write-Host "❌ Node.js is not installed. Install Node.js to run this app." -ForegroundColor Red
+    pause
+    exit
+}
+
+# Start React Native Metro server in a new window
+Start-Process powershell -ArgumentList "npx react-native start" -NoNewWindow
+
+# Run Android app if connected device/emulator exists
+Start-Process powershell -ArgumentList "npx react-native run-android"
+
+Write-Host "✅ Real version launched. Metro server started."
+pauseCDI-Genius-Real\launch-real.ps1Create-Full-CDI-Genius-ZIPs.ps1@echo off
 REM === CONFIGURATION ===
 set KEYSTORE=my-release-key.keystore
 set ALIAS=cdigenius-key
