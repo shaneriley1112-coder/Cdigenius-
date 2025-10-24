@@ -62,3 +62,4 @@ echo ✅ APK successfully aligned, signed, and verified!
 echo Output: %APK_OUT%
 pause
 Locate src/App.jsx: Locate src/App.jsx: 
+run start
